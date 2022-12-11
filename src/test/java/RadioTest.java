@@ -98,6 +98,29 @@ public class RadioTest {
         int actual = stat.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void incorrectHighRadioStation() {
+        Radio stat = new Radio();
+        stat.setCurrentRadioStation(11);
+
+        stat.reduceRadioStation();
+
+        int expected = 9;
+        int actual = stat.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void incorrectLowRadioStation() {
+        Radio stat = new Radio();
+        stat.setCurrentRadioStation(-5);
+
+        stat.reduceRadioStation();
+
+        int expected = 9;
+        int actual = stat.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
 }
 
 
